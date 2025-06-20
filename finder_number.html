@@ -41,12 +41,25 @@ span{
         <script>
             function ehNum(){
     var arr = [];
+    var cont = 0;
+    var temp = "";
     const texto = document.getElementById("texto");
     for(var i = 0; i < texto.value.length ;i++){
         if(!isNaN(texto.value[i]) && texto.value[i].trim() !== ""){
-            arr.push(texto.value[i]);
+           temp += texto.value[i];
+        }
+        else{
+            if(temp !== ""){
+                
+            
+            arr.push(temp);
+            temp = "";}
         }
     }
+    
+    if (temp !== "") {
+    arr.push(temp);
+}
     
     const resp = document.getElementById("resp");
     resp.textContent = arr;
