@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <style>
+            h1,h3{
+    text-align:center;
+    color:#15f;
+}
+
+input{
+    margin:0 auto;
+    width:200px;
+    display:block;
+}
+
+button{
+    margin:0 auto;
+    width:200px;
+    display:block;
+    margin-top:20px;
+}
+
+span{
+    text-align:center;
+    display:block;
+    margin-top:20px;
+}
+            
+            
+        </style>
+    </head>
+    <body>
+        <h1>Number Finder</h1>
+        <h3>Checa se existe numero</h3>
+        <input type="text"id="texto">
+        <button onclick="ehNum()">Checar</button>
+        
+        <span id="resp"></span>
+        
+        <script>
+            function ehNum(){
+    var arr = [];
+    const texto = document.getElementById("texto");
+    for(var i = 0; i < texto.value.length ;i++){
+        if(!isNaN(texto.value[i]) && texto.value[i].trim() !== ""){
+            arr.push(texto.value[i]);
+        }
+    }
+    
+    const resp = document.getElementById("resp");
+    resp.textContent = arr;
+    
+    
+     
+}
+            
+            
+        </script>
+    </body>
+</html>
