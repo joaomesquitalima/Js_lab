@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <style>
+        
+.box{
+    display:none;
+    position:fixed;
+    background-color:rgba(0,0,0,0.2);
+    width:100vw;
+    height:100vh;
+    z-index:9000;
+    top:0;
+    left:0;
+}
+
+.content {
+    position: relative; /* Necessário para posicionar o X dentro */
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff;
+    max-height: 80vh;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+/* Botão X */
+.close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.box.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+        </style>
+    </head>
+    <body>
+        <button onclick="a()">Alerta!</button>
+        
+        <div id="box" class="box">
+        
+            <div class="content">
+                <button class="close" onclick="fechar()">X</button>
+            <h2>Bom dia!</h2></div>
+        </div>
+    </body>
+    <script>
+        function a(){
+    document.getElementById("box").classList.add("show")
+}
+    </script>
+</html>
